@@ -1,23 +1,25 @@
-import { Text, Image, StyleSheet, Dimensions, View } from 'react-native'
+import { Image, StyleSheet, Dimensions, View } from 'react-native'
 import React from 'react'
 import imageTop from './../../assets/topo.png'
 import logo from './../../assets/logo.png'
-
+import TextApp from '../components/Text'
 const width = Dimensions.get("screen").width;
 
 export default function Basket() {
   return (
     <>
       <Image source={imageTop} style={style.top}/>
-      <Text style={style.title}>Detalhe da Cesta</Text>
+      <TextApp style={style.title}>Detalhe da Cesta</TextApp>
       <View style={style.wrapper}>
-        <Text style={style.name}>Cesta de verduras</Text>
+        <TextApp style={style.name}>Cesta de verduras</TextApp>
         <View style={style.wrapperFarm}>
           <Image source={logo} style={style.imageFarm}/>
-          <Text style={style.nameFarm}>Jenny Jack Farm</Text>
+          <TextApp style={style.nameFarm}>Jenny Jack Farm</TextApp>
         </View>
-        <Text style={style.description}>Uma cesta com produtos selecionados cuidadosamente da fazenda direto para a sua cozinha.</Text>
-        <Text style={style.price}>R$ 40,00</Text>
+        <TextApp style={style.description}>
+          Uma cesta com produtos selecionados cuidadosamente da fazenda direto para a sua cozinha.
+        </TextApp>
+        <TextApp style={style.price}>R$ 40,00</TextApp>
       </View>
     </>
   )
@@ -47,7 +49,7 @@ const style = StyleSheet.create({
     fontSize: 26,
     lineHeight: 42,
     color: "#464646",
-    fontFamily: "MontserratBold",
+    fontWeight: "bold",
   },
   wrapperFarm: {
     flexDirection: "row",
@@ -61,7 +63,6 @@ const style = StyleSheet.create({
     fontSize: 16,
     lineHeight: 26,
     marginLeft: 12,
-    fontFamily: "MontserratRegular",
   },
   description: {
     color: "#A3A3A3",
