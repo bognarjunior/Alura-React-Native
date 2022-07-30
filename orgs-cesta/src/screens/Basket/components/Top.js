@@ -5,11 +5,11 @@ import TextApp from '../../../components/Text'
 import imageTop from './../../../../assets/topo.png'
 const width = Dimensions.get("screen").width;
 
-const Top = () => {
+const Top = ({title}) => {
   return (
     <>
       <Image source={imageTop} style={styles.top}/>
-      <TextApp style={styles.title}>Detalhe da Cesta</TextApp>
+      <TextApp style={styles.title}>{title}</TextApp>
     </>
   )
 }

@@ -3,12 +3,12 @@ import { StyleSheet, View } from 'react-native'
 import Top from './components/Top'
 import Details from './components/Details'
 
-export default function Basket() {
+export default function Basket({ top, detail}) {
   return (
     <>
-      <Top />
+      <Top {...top} />
       <View style={styles.wrapper}>
-        <Details />
+        <Details {...detail} />
       </View>
     </>
   )

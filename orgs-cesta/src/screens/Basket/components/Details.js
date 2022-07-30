@@ -1,20 +1,19 @@
 import { View, StyleSheet, Image } from 'react-native'
 import React from 'react'
-import logo from './../../../../assets/logo.png'
 import TextApp from './../../../components/Text'
 
-const Details = () => {
+const Details = ({name, logoFarm, nameFarm, description, price}) => {
   return (
     <>
-      <TextApp style={styles.name}>Cesta de verduras</TextApp>
+      <TextApp style={styles.name}>{name}</TextApp>
       <View style={styles.wrapperFarm}>
-        <Image source={logo} style={styles.imageFarm}/>
-        <TextApp style={styles.nameFarm}>Jenny Jack Farm</TextApp>
+        <Image source={logoFarm} style={styles.imageFarm}/>
+        <TextApp style={styles.nameFarm}>{nameFarm}</TextApp>
       </View>
       <TextApp style={styles.description}>
-        Uma cesta com produtos selecionados cuidadosamente da fazenda direto para a sua cozinha.
+       {description}
       </TextApp>
-      <TextApp style={styles.price}>R$ 40,00</TextApp>
+      <TextApp style={styles.price}>{price}</TextApp>
     </>
   )
 }

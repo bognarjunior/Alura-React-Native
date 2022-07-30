@@ -1,23 +1,48 @@
-import React from 'react'
-import { StatusBar, SafeAreaView, View } from 'react-native';
-import { useFonts, Montserrat_400Regular, Montserrat_700Bold } from '@expo-google-fonts/montserrat';
-
+import React, {useEffect, useState, useCallback} from 'react'
+import { StatusBar, SafeAreaView } from 'react-native';
+import { Montserrat_400Regular, Montserrat_700Bold } from '@expo-google-fonts/montserrat';
+import * as SplashScreen from 'expo-splash-screen';
 import Basket from './src/screens/Basket';
+import mock from './src/mocks/basket';
+import * as Font from 'expo-font';
 
+SplashScreen.preventAutoHideAsync();
 export default function App() {
-  let [fontsLoaded] = useFonts({
-    "MontserratRegular": Montserrat_400Regular,
-    "MontserratBold": Montserrat_700Bold,
-  });
+  const [appIsReady, setAppIsReady] = useState(false);
 
-  if (!fontsLoaded) {
-    return <View />;
+  useEffect(() => {
+    let customFonts = {
+      "MontserratRegular": Montserrat_400Regular,
+      "MontserratBold": Montserrat_700Bold,
+    };
+    async function prepare() {
+      try {
+        await Font.loadAsync(customFonts);
+        await new Promise(resolve => setTimeout(resolve, 2000));
+      } catch (e) {
+        console.warn(e);
+      } finally {
+        setAppIsReady(true);
+      }
+    }
+
+    prepare();
+  }, []);
+
+  const onLayoutRootView = useCallback(async () => {
+    if (appIsReady) {
+      await SplashScreen.hideAsync();
+    }
+  }, [appIsReady]);
+
+  if (!appIsReady) {
+    return null;
   }
 
   return (
-    <SafeAreaView>
+    <SafeAreaView onLayout={onLayoutRootView}>
       <StatusBar />
-      <Basket />
+      <Basket {...mock}/>
     </SafeAreaView>
   );
 }
