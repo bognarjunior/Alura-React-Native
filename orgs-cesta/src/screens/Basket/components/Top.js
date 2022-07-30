@@ -8,7 +8,7 @@ const width = Dimensions.get("screen").width;
 const Top = () => {
   return (
     <>
-       <Image source={imageTop} style={styles.top}/>
+      <Image source={imageTop} style={styles.top}/>
       <TextApp style={styles.title}>Detalhe da Cesta</TextApp>
     </>
   )

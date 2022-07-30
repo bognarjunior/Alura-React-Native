@@ -5,7 +5,7 @@ import TextApp from './../../../components/Text'
 
 const Details = () => {
   return (
-    <View style={styles.wrapper}>
+    <>
       <TextApp style={styles.name}>Cesta de verduras</TextApp>
       <View style={styles.wrapperFarm}>
         <Image source={logo} style={styles.imageFarm}/>
@@ -15,15 +15,11 @@ const Details = () => {
         Uma cesta com produtos selecionados cuidadosamente da fazenda direto para a sua cozinha.
       </TextApp>
       <TextApp style={styles.price}>R$ 40,00</TextApp>
-    </View>
+    </>
   )
 }
 
 const styles = StyleSheet.create({
-  wrapper: {
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-  },
   name: {
     fontSize: 26,
     lineHeight: 42,
