@@ -1,6 +1,6 @@
 import { View, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
-import TextApp from './../../../components/Text'
+import TextApp from '../../../components/TextApp'
 
 const Details = ({name, logoFarm, nameFarm, description, price, buyButton}) => {
   return (
