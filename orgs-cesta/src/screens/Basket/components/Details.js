@@ -1,8 +1,8 @@
-import { View, StyleSheet, Image } from 'react-native'
+import { View, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import TextApp from './../../../components/Text'
 
-const Details = ({name, logoFarm, nameFarm, description, price}) => {
+const Details = ({name, logoFarm, nameFarm, description, price, buyButton}) => {
   return (
     <>
       <TextApp style={styles.name}>{name}</TextApp>
@@ -10,10 +10,13 @@ const Details = ({name, logoFarm, nameFarm, description, price}) => {
         <Image source={logoFarm} style={styles.imageFarm}/>
         <TextApp style={styles.nameFarm}>{nameFarm}</TextApp>
       </View>
-      <TextApp style={styles.description}>
-       {description}
-      </TextApp>
+      <TextApp style={styles.description}>{description}</TextApp>
       <TextApp style={styles.price}>{price}</TextApp>
+      <TouchableOpacity style={styles.button} onPress={() => {}}>
+        <TextApp style={styles.textButton}>
+          {buyButton}
+        </TextApp>
+      </TouchableOpacity>
     </>
   )
 }
@@ -49,6 +52,19 @@ const styles = StyleSheet.create({
     lineHeight: 42,
     fontWeight: "bold",
     marginTop: 8,
+  },
+  button: {
+    marginTop: 16,
+    backgroundColor: "#2A9F85",
+    paddingVertical: 16,
+    borderRadius: 6,
+  },
+  textButton: {
+    textAlign: "center",
+    color: "#FFFFFF",
+    fontWeight: "bold",
+    fontSize: 16,
+    lineHeight: 26,
   }
 }) 
 
