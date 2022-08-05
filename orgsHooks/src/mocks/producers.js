@@ -12,30 +12,35 @@ const producers = {
   title: 'Produtores',
   list: [
     {
+      id: 1,
       name: 'Green',
       image: green,
       distance: `${randomNumber(1, 500)}m`,
       stars: randomNumber(1, 5),
     },
     {
+      id: 2,
       name: 'Salad',
       image: salad,
       distance: `${randomNumber(1, 500)}m`,
       stars: randomNumber(1, 5),
     },
     {
+      id: 3,
       name: 'Jenny Jack Farm',
       image: jennyJack,
       distance: `${randomNumber(1, 500)}m`,
       stars: randomNumber(1, 5),
     },
     {
+      id: 4,
       name: 'Grow',
       image: grow,
       distance: `${randomNumber(1, 500)}m`,
       stars: randomNumber(1, 5),
     },
     {
+      id: 5,
       name: 'Potager',
       image: potager,
       distance: `${randomNumber(1, 500)}m`,
