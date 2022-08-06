@@ -1,11 +1,13 @@
 import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
-import Stars from '../../../components/Stars';
+import Stars from '../../../components/ListStars';
 
 const Card = ({id, name, image, distance, stars}) => {
   const [selected, setSelected] = useState(false);
   return (
-    <TouchableOpacity style={styles.container} onPress={() => setSelected(!selected)}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => setSelected(!selected)}>
       <Image style={styles.image} source={image} accessibilityLabel={name} />
       <View style={styles.detail}>
         <View>
