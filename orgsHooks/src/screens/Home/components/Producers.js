@@ -1,6 +1,7 @@
 import {View, Text, FlatList, StyleSheet} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {getProducers} from '../../../services/loadData';
+import Card from './Card';
 
 export default function Producers({top: Top}) {
   const [title, setTitle] = useState('');
@@ -26,7 +27,7 @@ export default function Producers({top: Top}) {
       <FlatList
         data={producers}
         keyExtractor={({id}) => id}
-        renderItem={({item: {name}}) => <Text>{name}</Text>}
+        renderItem={({item}) => <Card {...item} />}
         ListHeaderComponent={renderHeader}
       />
     </View>
