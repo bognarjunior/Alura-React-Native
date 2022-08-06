@@ -1,19 +1,20 @@
-import {View, Text, Image, StyleSheet} from 'react-native';
-import React from 'react';
+import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
+import React, {useState} from 'react';
 import Stars from '../../../components/Stars';
 
 const Card = ({id, name, image, distance, stars}) => {
+  const [selected, setSelected] = useState(false);
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={() => setSelected(!selected)}>
       <Image style={styles.image} source={image} accessibilityLabel={name} />
       <View style={styles.detail}>
         <View>
           <Text style={styles.name}>{name}</Text>
-          <Stars qtd={stars} />
+          <Stars qtd={stars} editable={selected} large={selected} />
         </View>
         <Text style={styles.distance}>{distance}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
