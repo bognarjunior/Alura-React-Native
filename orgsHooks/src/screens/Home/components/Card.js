@@ -1,15 +1,18 @@
 import {View, Text, Image, StyleSheet} from 'react-native';
 import React from 'react';
+import Stars from '../../../components/Stars';
 
 const Card = ({id, name, image, distance, stars}) => {
   return (
     <View style={styles.container}>
       <Image style={styles.image} source={image} accessibilityLabel={name} />
       <View style={styles.detail}>
-        <Text style={styles.name}>{name}</Text>
+        <View>
+          <Text style={styles.name}>{name}</Text>
+          <Stars qtd={stars} />
+        </View>
         <Text style={styles.distance}>{distance}</Text>
       </View>
-      <Text>{stars}</Text>
     </View>
   );
 };
@@ -21,7 +24,9 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
     borderRadius: 6,
     flexDirection: 'row',
+    //Android
     elevation: 4,
+    //iOS
     shadowColor: '#000000',
     shadowOffset: {
       width: 0,
