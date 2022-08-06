@@ -1,16 +1,59 @@
-import {View, Text} from 'react-native';
+import {View, Text, Image, StyleSheet} from 'react-native';
 import React from 'react';
 
 const Card = ({id, name, image, distance, stars}) => {
   return (
-    <View>
-      <Text>{id}</Text>
-      <Text>{name}</Text>
-      <Text>{image}</Text>
-      <Text>{distance}</Text>
+    <View style={styles.container}>
+      <Image style={styles.image} source={image} accessibilityLabel={name} />
+      <View style={styles.detail}>
+        <Text style={styles.name}>{name}</Text>
+        <Text style={styles.distance}>{distance}</Text>
+      </View>
       <Text>{stars}</Text>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#F6F6F6',
+    marginVertical: 8,
+    marginHorizontal: 16,
+    borderRadius: 6,
+    flexDirection: 'row',
+    elevation: 4,
+    shadowColor: '#000000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+  },
+  image: {
+    width: 48,
+    height: 48,
+    borderRadius: 6,
+    marginVertical: 16,
+    marginLeft: 16,
+  },
+  detail: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginLeft: 8,
+    marginVertical: 16,
+    marginRight: 16,
+  },
+  name: {
+    fontSize: 14,
+    lineHeight: 22,
+    fontWeight: 'bold',
+  },
+  distance: {
+    fontSize: 12,
+    lineHeight: 19,
+  },
+});
 
 export default Card;
