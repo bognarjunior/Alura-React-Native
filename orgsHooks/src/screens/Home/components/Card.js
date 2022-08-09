@@ -1,9 +1,13 @@
 import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
-import React, {useReducer} from 'react';
+import React, {useMemo, useReducer} from 'react';
 import Stars from '../../../components/ListStars';
+
+const distanceMeters = distance => `${distance}m`;
 
 const Card = ({id, name, image, distance, stars}) => {
   const [selected, reverseSelected] = useReducer(selected => !selected, false);
+  const distanceText = useMemo(() => distanceMeters(distance), [distance]);
+
   return (
     <TouchableOpacity style={styles.container} onPress={reverseSelected}>
       <Image style={styles.image} source={image} accessibilityLabel={name} />
@@ -12,7 +16,7 @@ const Card = ({id, name, image, distance, stars}) => {
           <Text style={styles.name}>{name}</Text>
           <Stars qtd={stars} editable={selected} large={selected} />
         </View>
-        <Text style={styles.distance}>{distance}</Text>
+        <Text style={styles.distance}>{distanceText}</Text>
       </View>
     </TouchableOpacity>
   );
