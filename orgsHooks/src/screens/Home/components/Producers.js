@@ -1,18 +1,10 @@
 import {View, Text, FlatList, StyleSheet} from 'react-native';
-import React, {useEffect, useState} from 'react';
-import {getProducers} from '../../../services/loadData';
+import React from 'react';
 import Card from './Card';
+import useProducers from '../../../hooks/useProducers';
 
 export default function Producers({top: Top}) {
-  const [title, setTitle] = useState('');
-  const [producers, setProducers] = useState([]);
-
-  useEffect(() => {
-    const data = getProducers();
-    setTitle(data.title);
-    setProducers(data.list);
-  }, []);
-
+  const [title, producers] = useProducers();
   const renderHeader = () => {
     return (
       <>
