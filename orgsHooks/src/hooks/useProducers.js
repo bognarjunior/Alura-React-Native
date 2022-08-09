@@ -7,6 +7,7 @@ export default function useProducers() {
 
   useEffect(() => {
     const data = getProducers();
+    data.list.sort((prod1, prod2) => prod1.distance - prod2.distance);
     setTitle(data.title);
     setProducers(data.list);
   }, []);
