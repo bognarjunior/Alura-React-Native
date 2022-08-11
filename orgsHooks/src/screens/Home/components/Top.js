@@ -1,7 +1,7 @@
 import {View, Text, Image, StyleSheet} from 'react-native';
 import React from 'react';
 import logo from './../../../assets/logo.png';
-import {getWords} from '../../../services/loadData';
+import {getTexts} from '../../../services/loadData';
 
 class Top extends React.Component {
   state = {
@@ -11,7 +11,7 @@ class Top extends React.Component {
     },
   };
   updateTop() {
-    const data = getWords();
+    const data = getTexts();
     this.setState({top: data});
   }
   componentDidMount() {

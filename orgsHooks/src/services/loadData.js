@@ -1,10 +1,10 @@
 import producers from '../mocks/producers';
-import words from '../mocks/words';
+import texts from '../mocks/texts';
 
 export const getProducers = () => {
   return producers;
 };
 
-export const getWords = () => {
-  return words;
+export const getTexts = () => {
+  return texts;
 };

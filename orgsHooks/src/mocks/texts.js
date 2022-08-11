@@ -1,4 +1,4 @@
-const words = {
+const texts = {
   welcome: 'Olá Bognar',
   subtitle: 'Encontre os produtores mais próximos a você!',
   subtitleBestProducers: 'Veja os produtores com 4+ estrelas!',
@@ -10,4 +10,4 @@ const words = {
   titleItems: 'Itens da cesta',
 };
 
-export default words;
+export default texts;

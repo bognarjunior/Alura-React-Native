@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
 import React, {useMemo, useReducer} from 'react';
 import Stars from '../../../components/ListStars';
