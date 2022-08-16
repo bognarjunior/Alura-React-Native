@@ -1,33 +1,23 @@
 import {View, Text, Image, StyleSheet} from 'react-native';
 import React from 'react';
 import logo from './../../../assets/logo.png';
-import {getTexts} from '../../../services/loadData';
+import useTexts from '../../../hooks/useTexts';
 
-class Top extends React.Component {
-  state = {
-    top: {
-      welcome: '',
-      subtitle: '',
-    },
-  };
-  updateTop() {
-    const data = getTexts();
-    this.setState({top: data});
-  }
-  componentDidMount() {
-    this.updateTop();
-  }
-  render() {
-    return (
+export default function Top({bestProducers}) {
+  const {welcome, subtitle, subtitleBestProducers} = useTexts();
+
+  return (
+    <>
       <View style={styles.wrapper}>
         <Image source={logo} style={styles.image} />
-        <Text style={styles.welcomeText}>{this.state.top.welcome}</Text>
-        <Text style={styles.subtitle}>{this.state.top.subtitle}</Text>
+        <Text style={styles.welcomeText}>{bestProducers ? '' : welcome}</Text>
+        <Text style={styles.subtitle}>
+          {bestProducers ? subtitleBestProducers : subtitle}
+        </Text>
       </View>
-    );
-  }
+    </>
+  );
 }
-
 const styles = StyleSheet.create({
   wrapper: {
     backgroundColor: '#F6F6F6',
@@ -50,5 +40,3 @@ const styles = StyleSheet.create({
     color: '#A3A3A3',
   },
 });
-
-export default Top;

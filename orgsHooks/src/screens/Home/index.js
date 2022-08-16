@@ -1,9 +1,8 @@
 import React from 'react';
-import Producers from './components/Producers';
-import Top from './components/Top';
+import Producers from '../Producers';
 
-const Home = () => {
-  return <Producers top={Top} />;
+const index = () => {
+  return <Producers />;
 };
 
-export default Home;
+export default index;
