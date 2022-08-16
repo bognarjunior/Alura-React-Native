@@ -1,8 +1,8 @@
 import React from 'react';
 import ListProducers from './components/Producers';
 
-const Producers = () => {
-  return <ListProducers />;
+const Producers = ({bestProducers}) => {
+  return <ListProducers bestProducers={bestProducers} />;
 };
 
 export default Producers;

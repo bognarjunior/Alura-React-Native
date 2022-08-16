@@ -1,8 +1,8 @@
 import React from 'react';
 import Producers from '../Producers';
 
-const index = () => {
+const Home = () => {
   return <Producers />;
 };
 
-export default index;
+export default Home;
