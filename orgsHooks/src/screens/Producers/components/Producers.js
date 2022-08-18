@@ -3,8 +3,10 @@ import React from 'react';
 import Card from './Card';
 import Top from './Top';
 import useProducers from '../../../hooks/useProducers';
+import {useNavigation} from '@react-navigation/native';
 
 export default function ListProducers({bestProducers}) {
+  const navigation = useNavigation();
   const [title, producers] = useProducers();
   const renderHeader = () => {
     return (
@@ -20,7 +22,14 @@ export default function ListProducers({bestProducers}) {
       <FlatList
         data={producers}
         keyExtractor={({id}) => id}
-        renderItem={({item}) => <Card {...item} />}
+        renderItem={({item}) => (
+          <Card
+            {...item}
+            onPress={() => {
+              navigation.navigate('Producer');
+            }}
+          />
+        )}
         ListHeaderComponent={renderHeader}
       />
     </View>

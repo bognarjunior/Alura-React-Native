@@ -5,17 +5,17 @@ import Stars from '../../../components/ListStars';
 
 const distanceMeters = distance => `${distance}m`;
 
-const Card = ({id, name, image, distance, stars}) => {
-  const [selected, reverseSelected] = useReducer(selected => !selected, false);
+const Card = ({id, name, image, distance, stars, onPress}) => {
+  //const [selected, reverseSelected] = useReducer(selected => !selected, false);
   const distanceText = useMemo(() => distanceMeters(distance), [distance]);
 
   return (
-    <TouchableOpacity style={styles.container} onPress={reverseSelected}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <Image style={styles.image} source={image} accessibilityLabel={name} />
       <View style={styles.detail}>
         <View>
           <Text style={styles.name}>{name}</Text>
-          <Stars qtd={stars} editable={selected} large={selected} />
+          <Stars qtd={stars} />
         </View>
         <Text style={styles.distance}>{distanceText}</Text>
       </View>
