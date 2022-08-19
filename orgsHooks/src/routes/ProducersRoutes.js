@@ -4,10 +4,10 @@ import Producer from '../screens/Producer';
 import Home from '../screens/Home';
 
 const Stack = createNativeStackNavigator();
-const ProducersRoutes = () => {
+const ProducersRoutes = ({Component = Home}) => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="HomeStack" component={Home} />
+      <Stack.Screen name="HomeStack" component={Component} />
       <Stack.Screen name="Producer" component={Producer} />
     </Stack.Navigator>
   );
