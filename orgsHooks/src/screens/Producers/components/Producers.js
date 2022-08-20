@@ -26,7 +26,7 @@ export default function ListProducers({bestProducers}) {
           <Card
             {...item}
             onPress={() => {
-              navigation.navigate('Producer');
+              navigation.navigate('Producer', item);
             }}
           />
         )}
