@@ -21,7 +21,9 @@ const Producer = () => {
   /* "baskets": [{"detail": [Object], "itens": [Array]}, {"detail": [Object], "itens": [Array]}],
    "distance": "124", "id": 5, "image": 10, "name": "Potager", "stars": 3} */
 
-  return <FlatList data={baskets} renderItem={renderItem} />;
+  return (
+    <FlatList data={baskets} renderItem={renderItem} style={styles.list} />
+  );
 };
 
 const styles = StyleSheet.create({
