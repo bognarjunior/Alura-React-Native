@@ -6,10 +6,6 @@ import Text from '../../../components/Text';
 export default function Basket({detail, items, producer}) {
   const navigation = useNavigation();
   const {name, image, description, price} = detail;
-
-  console.log(detail)
-  console.log(items)
-  console.log(producer)
   return (
     <TouchableOpacity style={styles.basket} onPress={() => {}}>
       <View style={styles.content}>

@@ -8,29 +8,36 @@ import top from '../assets/top.png';
 import Back from '../assets/voltar.svg';
 
 const width = Dimensions.get('screen').width;
-const HEIGTH = 270;
+const HEIGHT_DEFAULT = 270;
 
-export default function Topo({title, image = top, height = HEIGTH}) {
+export default function Top({title, image = top, height = HEIGHT_DEFAULT}) {
+  console.log('height', height);
+  console.log('title', title);
+  console.log('image', image);
   const styles = funcStyles(height);
   return (
     <>
-      <Image source={image} style={styles.topo} />
-      <Gradient
+      <Image source={image} style={styles.top} />
+      <Text style={styles.title}>{title}</Text>
+      <TouchableOpacity onPress={() => {}} style={styles.backButton}>
+        <Back color="white" style={styles.backSVG} />
+      </TouchableOpacity>
+     {/*  <Gradient
         width={width}
         height={(130 / 360) * width}
         style={styles.gradient}
       />
       <Text style={styles.title}>{title}</Text>
-      <TouchableOpacity onPress={() => {}} style={styles.botaoVoltar}>
-        <Back color="white" style={styles.voltar} />
-      </TouchableOpacity>
+      <TouchableOpacity onPress={() => {}} style={styles.backButton}>
+        <Back color="white" style={styles.backSVG} />
+      </TouchableOpacity> */}
     </>
   );
 }
 
 const funcStyles = height =>
   StyleSheet.create({
-    topo: {
+    top: {
       width: '100%',
       height: height,
     },
@@ -47,11 +54,11 @@ const funcStyles = height =>
       fontWeight: 'bold',
       padding: 16,
     },
-    botaoVoltar: {
+    backButton: {
       position: 'absolute',
       padding: 17,
     },
-    backButtom: {
+    backSVG: {
       width: 24,
       height: 24,
     },

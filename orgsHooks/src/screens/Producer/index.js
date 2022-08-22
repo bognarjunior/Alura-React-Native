@@ -2,11 +2,17 @@ import {StyleSheet, FlatList} from 'react-native';
 import React from 'react';
 import {useRoute} from '@react-navigation/native';
 import Basket from './components/Basket';
-
+import Top from '../../components/Top';
+import topImage from './../../assets/producers/top.png';
+import useTexts from '../../hooks/useTexts';
 const Producer = () => {
   const route = useRoute();
+  const {detailProducer, titleBaskets} = useTexts();
   const {name, image, baskets} = route.params;
-  console.log(baskets);
+  const TopApp = () => {
+    return <Top title={detailProducer} image={topImage} height={150} />;
+  };
+
   const renderItem = ({item}) => {
     return (
       <Basket
@@ -18,11 +24,14 @@ const Producer = () => {
       />
     );
   };
-  /* "baskets": [{"detail": [Object], "itens": [Array]}, {"detail": [Object], "itens": [Array]}],
-   "distance": "124", "id": 5, "image": 10, "name": "Potager", "stars": 3} */
 
   return (
-    <FlatList data={baskets} renderItem={renderItem} style={styles.list} />
+    <FlatList
+      ListHeaderComponent={TopApp}
+      data={baskets}
+      renderItem={renderItem}
+      style={styles.list}
+    />
   );
 };
 
