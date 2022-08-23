@@ -18,11 +18,7 @@ export default function Top({title, image = top, height = HEIGHT_DEFAULT}) {
   return (
     <>
       <Image source={image} style={styles.top} />
-      <Text style={styles.title}>{title}</Text>
-      <TouchableOpacity onPress={() => {}} style={styles.backButton}>
-        <Back color="white" style={styles.backSVG} />
-      </TouchableOpacity>
-     {/*  <Gradient
+      <Gradient
         width={width}
         height={(130 / 360) * width}
         style={styles.gradient}
@@ -30,7 +26,7 @@ export default function Top({title, image = top, height = HEIGHT_DEFAULT}) {
       <Text style={styles.title}>{title}</Text>
       <TouchableOpacity onPress={() => {}} style={styles.backButton}>
         <Back color="white" style={styles.backSVG} />
-      </TouchableOpacity> */}
+      </TouchableOpacity>
     </>
   );
 }
