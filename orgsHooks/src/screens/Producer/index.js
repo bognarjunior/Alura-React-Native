@@ -1,4 +1,4 @@
-import {StyleSheet, FlatList} from 'react-native';
+import {StyleSheet, FlatList, View, Image} from 'react-native';
 import React from 'react';
 import {useRoute} from '@react-navigation/native';
 import Basket from './components/Basket';
@@ -10,7 +10,16 @@ const Producer = () => {
   const {detailProducer, titleBaskets} = useTexts();
   const {name, image, baskets} = route.params;
   const TopApp = () => {
-    return <Top title={detailProducer} image={topImage} height={150} />;
+    return (
+      <>
+        <Top title={detailProducer} image={topImage} height={150} />
+        <View style={styles.content}>
+          <View style={styles.logo}>
+            <Image source={image} style={styles.producerImage} />
+          </View>
+        </View>
+      </>
+    );
   };
 
   const renderItem = ({item}) => {
@@ -39,7 +48,7 @@ const styles = StyleSheet.create({
   list: {
     backgroundColor: '#ffffff',
   },
-  conteudo: {
+  content: {
     paddingHorizontal: 16,
   },
   logo: {

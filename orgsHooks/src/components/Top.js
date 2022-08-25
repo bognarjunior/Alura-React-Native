@@ -11,9 +11,6 @@ const width = Dimensions.get('screen').width;
 const HEIGHT_DEFAULT = 270;
 
 export default function Top({title, image = top, height = HEIGHT_DEFAULT}) {
-  console.log('height', height);
-  console.log('title', title);
-  console.log('image', image);
   const styles = funcStyles(height);
   return (
     <>
