@@ -6,7 +6,10 @@ import Home from '../screens/Home';
 const Stack = createNativeStackNavigator();
 const ProducersRoutes = ({Component = Home}) => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
       <Stack.Screen name="HomeStack" component={Component} />
       <Stack.Screen name="Producer" component={Producer} />
     </Stack.Navigator>

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Image, StyleSheet, Dimensions, TouchableOpacity} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 import Text from './Text';
 
@@ -12,6 +13,7 @@ const HEIGHT_DEFAULT = 270;
 
 export default function Top({title, image = top, height = HEIGHT_DEFAULT}) {
   const styles = funcStyles(height);
+  const navigation = useNavigation();
   return (
     <>
       <Image source={image} style={styles.top} />
@@ -21,7 +23,9 @@ export default function Top({title, image = top, height = HEIGHT_DEFAULT}) {
         style={styles.gradient}
       />
       <Text style={styles.title}>{title}</Text>
-      <TouchableOpacity onPress={() => {}} style={styles.backButton}>
+      <TouchableOpacity
+        onPress={() => navigation.goBack()}
+        style={styles.backButton}>
         <Back color="white" style={styles.backSVG} />
       </TouchableOpacity>
     </>
