@@ -1,4 +1,4 @@
-import {StyleSheet, FlatList, View, Image} from 'react-native';
+import {StyleSheet, Text, FlatList, View, Image} from 'react-native';
 import React from 'react';
 import {useRoute} from '@react-navigation/native';
 import Basket from './components/Basket';
@@ -16,7 +16,9 @@ const Producer = () => {
         <View style={styles.content}>
           <View style={styles.logo}>
             <Image source={image} style={styles.producerImage} />
+            <Text style={styles.producer}>{name}</Text>
           </View>
+          <Text style={styles.baskets}>{titleBaskets}</Text>
         </View>
       </>
     );
