@@ -22,10 +22,13 @@ const Routes = () => {
             if (name === 'BestProducers') {
               Icon = Heart;
             }
-            return <Icon color={color} />;
+            return <Icon color={color} width={20} height={20} />;
           },
           tabBarActiveTintColor: '#2A9F85',
           tabBarInactiveTintColor: '#C7C7C7',
+          tabBarLabelStyle: {
+            fontSize: 14,
+          },
         })}>
         <Tab.Screen name="Home" component={ProducersRoutes} />
         <Tab.Screen name="BestProducers" component={BestProducersRoutes} />
