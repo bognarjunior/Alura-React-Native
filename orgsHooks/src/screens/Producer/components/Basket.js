@@ -7,7 +7,15 @@ export default function Basket({detail, items, producer}) {
   const navigation = useNavigation();
   const {name, image, description, price} = detail;
   return (
-    <TouchableOpacity style={styles.basket} onPress={() => {}}>
+    <TouchableOpacity
+      style={styles.basket}
+      onPress={() =>
+        navigation.navigate('Basket', {
+          detail,
+          items,
+          producer,
+        })
+      }>
       <View style={styles.content}>
         <Image source={image} style={styles.image} />
         <View style={styles.text}>

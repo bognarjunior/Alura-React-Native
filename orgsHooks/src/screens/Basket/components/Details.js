@@ -1,35 +1,35 @@
-import { View, StyleSheet, Image, TouchableOpacity } from 'react-native'
-import React from 'react'
-import TextApp from '../../../components/TextApp'
+import {View, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import React from 'react';
+import Text from '../../../components/Text';
+import useTexts from '../../../hooks/useTexts';
 
-const Details = ({name, logoFarm, nameFarm, description, price, buyButton}) => {
+const Details = ({name, logoFarm, nameFarm, description, price}) => {
+  const {buttonBuy} = useTexts();
   return (
     <>
-      <TextApp style={styles.name}>{name}</TextApp>
+      <Text style={styles.name}>{name}</Text>
       <View style={styles.wrapperFarm}>
-        <Image source={logoFarm} style={styles.imageFarm}/>
-        <TextApp style={styles.nameFarm}>{nameFarm}</TextApp>
+        <Image source={logoFarm} style={styles.imageFarm} />
+        <Text style={styles.nameFarm}>{nameFarm}</Text>
       </View>
-      <TextApp style={styles.description}>{description}</TextApp>
-      <TextApp style={styles.price}>{price}</TextApp>
+      <Text style={styles.description}>{description}</Text>
+      <Text style={styles.price}>{price}</Text>
       <TouchableOpacity style={styles.button} onPress={() => {}}>
-        <TextApp style={styles.textButton}>
-          {buyButton}
-        </TextApp>
+        <Text style={styles.textButton}>{buttonBuy}</Text>
       </TouchableOpacity>
     </>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   name: {
     fontSize: 26,
     lineHeight: 42,
-    color: "#464646",
-    fontWeight: "bold",
+    color: '#464646',
+    fontWeight: 'bold',
   },
   wrapperFarm: {
-    flexDirection: "row",
+    flexDirection: 'row',
     paddingVertical: 12,
   },
   imageFarm: {
@@ -42,30 +42,30 @@ const styles = StyleSheet.create({
     marginLeft: 12,
   },
   description: {
-    color: "#A3A3A3",
+    color: '#A3A3A3',
     fontSize: 16,
-    lineHeight: 26
+    lineHeight: 26,
   },
   price: {
-    color: "#2A9F85",
+    color: '#2A9F85',
     fontSize: 26,
     lineHeight: 42,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     marginTop: 8,
   },
   button: {
     marginTop: 16,
-    backgroundColor: "#2A9F85",
+    backgroundColor: '#2A9F85',
     paddingVertical: 16,
     borderRadius: 6,
   },
   textButton: {
-    textAlign: "center",
-    color: "#FFFFFF",
-    fontWeight: "bold",
+    textAlign: 'center',
+    color: '#FFFFFF',
+    fontWeight: 'bold',
     fontSize: 16,
     lineHeight: 26,
-  }
-}) 
+  },
+});
 
-export default Details
+export default Details;

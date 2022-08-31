@@ -2,6 +2,7 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Producer from '../screens/Producer';
 import Home from '../screens/Home';
+import Basket from '../screens/Basket';
 
 const Stack = createNativeStackNavigator();
 const ProducersRoutes = ({Component = Home}) => {
@@ -12,6 +13,7 @@ const ProducersRoutes = ({Component = Home}) => {
       }}>
       <Stack.Screen name="HomeStack" component={Component} />
       <Stack.Screen name="Producer" component={Producer} />
+      <Stack.Screen name="Basket" component={Basket} />
     </Stack.Navigator>
   );
 };

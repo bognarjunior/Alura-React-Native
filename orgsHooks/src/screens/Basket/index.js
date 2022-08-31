@@ -3,15 +3,20 @@ import {FlatList, StyleSheet, View} from 'react-native';
 import Top from './components/Top';
 import Details from './components/Details';
 import Item from './components/Item';
-import TextApp from '../../components/TextApp';
+import Text from '../../components/Text';
+import useTexts from '../../hooks/useTexts';
+import {useRoute} from '@react-navigation/native';
 
-export default function Basket({top, detail, items}) {
+export default function Basket() {
+  const route = useRoute();
+  const {topBasket, titleItems} = useTexts();
+  const {detail, items, producer} = route.params;
   const renderHeader = () => (
     <>
-      <Top {...top} />
+      <Top title={topBasket} />
       <View style={styles.wrapper}>
-        <Details {...detail} />
-        <TextApp style={styles.title}>{items.title}</TextApp>
+        <Details {...detail} producer={producer} />
+        <Text style={styles.title}>{titleItems}</Text>
       </View>
     </>
   );

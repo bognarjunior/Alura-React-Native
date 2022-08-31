@@ -1,15 +1,15 @@
 import {Image, StyleSheet, Dimensions} from 'react-native';
 import React from 'react';
-import TextApp from '../../../components/TextApp';
+import Text from '../../../components/Text';
 
-import imageTop from './../../../../assets/topo.png';
+import imageTop from './../../../assets/top.png';
 const width = Dimensions.get('screen').width;
 
 const Top = ({title}) => {
   return (
     <>
       <Image source={imageTop} style={styles.top} />
-      <TextApp style={styles.title}>{title}</TextApp>
+      <Text style={styles.title}>{title}</Text>
     </>
   );
 };
