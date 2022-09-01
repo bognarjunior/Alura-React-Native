@@ -24,7 +24,7 @@ export default function Basket() {
   return (
     <>
       <FlatList
-        data={items.list}
+        data={items}
         renderItem={Item}
         keyExtractor={({name}) => name}
         ListHeaderComponent={renderHeader}
