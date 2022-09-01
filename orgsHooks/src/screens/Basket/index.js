@@ -1,6 +1,6 @@
 import React from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
-import Top from './components/Top';
+import Top from './../../components/Top';
 import Details from './components/Details';
 import Item from './components/Item';
 import Text from '../../components/Text';
