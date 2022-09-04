@@ -8,8 +8,12 @@ const texts = {
   topBasket: 'Detalhe da cesta',
   buttonBuy: 'Comprar',
   titleItems: 'Itens da cesta',
-  messageBuy:
+  messagePurchase:
     'Agradecemos pela compra da cesta $NAME, seu pedido chegará em breve',
+  topPurchase: 'Pedido feito com sucesso!',
+  titlePurchase: 'Parabéns!',
+  buttonHomePurchase: 'Voltar a Home',
+  buttonProducerPurchase: 'Voltar ao Produtor',
 };
 
 export default texts;

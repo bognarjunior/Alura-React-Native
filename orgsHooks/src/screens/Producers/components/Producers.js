@@ -9,16 +9,15 @@ import useTexts from '../../../hooks/useTexts';
 export default function ListProducers({bestProducers}) {
   const navigation = useNavigation();
   const route = useRoute();
-  const name = route.params?.buy?.name;
-  const timestamp = route.params?.buy?.timestamp;
+  const name = route.params?.purchase?.name;
+  const timestamp = route.params?.purchase?.timestamp;
 
-  console.log(timestamp);
   const [showMessage, setShowMessage] = useState(false);
 
   const [title, producers] = useProducers();
 
-  const {messageBuy} = useTexts();
-  const message = messageBuy?.replace('$NAME', name);
+  const {messagePurchase} = useTexts();
+  const message = messagePurchase?.replace('$NAME', name);
 
   useEffect(() => {
     setShowMessage(!!name);

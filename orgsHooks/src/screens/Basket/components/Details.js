@@ -19,8 +19,8 @@ const Details = ({name, logoFarm, nameFarm, description, price}) => {
       <TouchableOpacity
         style={styles.button}
         onPress={() =>
-          navigation.navigate('HomeStack', {
-            buy: {name, timestamp: +new Date()},
+          navigation.navigate('Resume', {
+            purchase: {name, timestamp: +new Date()},
           })
         }>
         <Text style={styles.textButton}>{buttonBuy}</Text>
