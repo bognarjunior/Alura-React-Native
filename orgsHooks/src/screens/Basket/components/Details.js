@@ -1,9 +1,11 @@
 import {View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
 import Text from '../../../components/Text';
 import useTexts from '../../../hooks/useTexts';
 
 const Details = ({name, logoFarm, nameFarm, description, price}) => {
+  const navigation = useNavigation();
   const {buttonBuy} = useTexts();
   return (
     <>
@@ -14,7 +16,9 @@ const Details = ({name, logoFarm, nameFarm, description, price}) => {
       </View>
       <Text style={styles.description}>{description}</Text>
       <Text style={styles.price}>{price}</Text>
-      <TouchableOpacity style={styles.button} onPress={() => {}}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.popToTop()}>
         <Text style={styles.textButton}>{buttonBuy}</Text>
       </TouchableOpacity>
     </>
