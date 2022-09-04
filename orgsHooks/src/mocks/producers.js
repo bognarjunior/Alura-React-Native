@@ -79,7 +79,7 @@ const producers = {
             price: 'R$ 40,00',
             image: vegetables,
           },
-          itens: [
+          items: [
             {
               name: 'Tomate',
               image: tomato,
@@ -102,7 +102,7 @@ const producers = {
             price: 'R$ 40,00',
             image: tomato,
           },
-          itens: [
+          items: [
             {
               name: 'Tomate',
               image: tomato,
@@ -130,7 +130,7 @@ const producers = {
             price: 'R$ 40,00',
             image: potato,
           },
-          itens: [
+          items: [
             {
               name: 'Batata',
               image: potato,
@@ -145,7 +145,7 @@ const producers = {
             price: 'R$ 40,00',
             image: broccoli,
           },
-          itens: [
+          items: [
             {
               name: 'Tomate',
               image: tomato,
@@ -173,7 +173,7 @@ const producers = {
             price: 'R$ 40,00',
             image: asparagus,
           },
-          itens: [
+          items: [
             {
               name: 'Abóbora',
               image: pumpkin,
@@ -192,7 +192,7 @@ const producers = {
             price: 'R$ 40,00',
             image: pumpkin,
           },
-          itens: [
+          items: [
             {
               name: 'Tomate',
               image: tomato,
@@ -220,7 +220,7 @@ const producers = {
             price: 'R$ 40,00',
             image: cucumber,
           },
-          itens: [
+          items: [
             {
               name: 'Pepino',
               image: cucumber,
@@ -235,7 +235,7 @@ const producers = {
             price: 'R$ 40,00',
             image: carrot2,
           },
-          itens: [
+          items: [
             {
               name: 'Brócolis',
               image: broccoli,

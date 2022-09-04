@@ -1,5 +1,5 @@
 import {View, Text, FlatList, StyleSheet} from 'react-native';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Card from './Card';
 import Top from './Top';
 import useProducers from '../../../hooks/useProducers';
@@ -10,16 +10,33 @@ export default function ListProducers({bestProducers}) {
   const navigation = useNavigation();
   const route = useRoute();
   const name = route.params?.buy?.name;
+  const timestamp = route.params?.buy?.timestamp;
+
+  console.log(timestamp);
+  const [showMessage, setShowMessage] = useState(false);
 
   const [title, producers] = useProducers();
+
   const {messageBuy} = useTexts();
   const message = messageBuy?.replace('$NAME', name);
+
+  useEffect(() => {
+    setShowMessage(!!name);
+    let timeout;
+
+    if (name) {
+      timeout = setTimeout(() => {
+        setShowMessage(false);
+      }, 3000);
+    }
+    return clearTimeout(timeout);
+  }, [name, timestamp]);
 
   const renderHeader = () => {
     return (
       <>
         <Top bestProducers={bestProducers} />
-        {name && <Text style={styles.messageBuy}>{message}</Text>}
+        {showMessage && <Text style={styles.messageBuy}>{message}</Text>}
         <Text style={styles.title}>{title}</Text>
       </>
     );
