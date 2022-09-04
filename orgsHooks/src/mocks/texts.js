@@ -8,6 +8,8 @@ const texts = {
   topBasket: 'Detalhe da cesta',
   buttonBuy: 'Comprar',
   titleItems: 'Itens da cesta',
+  messageBuy:
+    'Agradecemos pela compra da cesta $NAME, seu pedido chegará em breve',
 };
 
 export default texts;
